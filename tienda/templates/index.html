@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static 'tienda/css/styles.css' %}">
+</head>
+<body>
+    <p><img class="logo" src="{% static 'tienda/imagenes/wrld.jpg' %}" alt="logo app"></p>
+    
+    <h1>¡Bienvenido a la página de descarga de WRLD Shoes!</h1>
+    <p>Nuestra aplicación es una tienda de zapatillas que ofrece una amplia selección de calzado.
+        Nos enorgullecemos de ofrecer productos de marcas reconocidas a precios competitivos,
+        con envíos rápidos y un servicio al cliente excepcional.
+        Explora nuestro catálogo y encuentra el par perfecto para completar tu look.
+        ¡Compra con confianza desde la comodidad de tu hogar! </p>
+
+    <p><img class="small-img" src="{% static 'tienda/imagenes/login.jpg' %}" alt="login app"></p>
+    <p><img class="small-img" src="{% static 'tienda/imagenes/menu.jpg' %}" alt="menu app"></p>
+    <p><img class="small-img" src="{% static 'tienda/imagenes/zapatillas.jpg' %}" alt="zapatillas app"></p>
+
+    <h2>Descarga nuestra aplicación aquí</h2>
+
+    {% if is_mobile %}
+        <a href="https://github.com/RodrigoAndres999/WRLD_Shoes.apk">Ir a la versión móvil</a>
+    {% elif is_pc %}
+        <img src="{% static 'tienda/imagenes/codigoqr_wrldshoes.png' %}" alt="Código QR">
+    {% else %}
+        <p>No pudimos determinar tu dispositivo.</p>
+    {% endif %}
+</body>
+</html>
